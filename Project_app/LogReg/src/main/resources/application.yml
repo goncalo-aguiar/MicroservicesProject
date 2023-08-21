@@ -1,0 +1,54 @@
+micronaut:
+  server:
+    port: 1011
+  application:
+    name: logreg
+  datasource:
+    jdbc:
+      type: HIKARI
+  security:
+    enabled: true
+    authentication: bearer
+    token:
+      jwt:
+        cookie:
+          enabled: true
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:MySecretKeyValue00132876516KeyKeykey56561699}"'
+            validator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:MySecretKeyValue00132876516KeyKeykey56561699}"'
+    endpoints:
+      login:
+        path: "/login"
+        enabled: true
+      logout:
+        path: "/logout"
+        enabled: true
+
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/LogReg
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+
+#eureka:
+#  client:
+#    registration:
+#      enabled: true
+#    defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"

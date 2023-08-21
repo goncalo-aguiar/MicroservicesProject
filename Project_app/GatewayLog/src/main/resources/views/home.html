@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
+    <style>
+        body {
+            background: #212121;
+            color: #666;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn-container button {
+            margin-bottom: 10px;
+            width: 200px;
+            height: 40px;
+            background-color: #333;
+            color: #ccc;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .btn-container button.logout-btn {
+            width: 150px;
+            height: 30px;
+            font-size: 14px;
+        }
+
+        .btn-container button:hover {
+            background-color: #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="'Hello, ' + ${username} + '!'"></h1>
+    <p th:text=" 'Roles: ' + ${roles}"></p>
+    <div class="btn-container">
+        <button onclick="location.href='/api/tic'">TIC TAC TOE</button>
+        <button onclick="location.href='/api/pong'">PONG</button>
+        <button onclick="location.href='/api/leaderboard'">LEADERBOARD</button>
+        <button class="logout-btn" type="submit" form="logout-form">Logout</button>
+    </div>
+    <form id="logout-form" th:action="@{/api/logout}" method="post" style="display: none;"></form>
+</div>
+</body>
+</html>
+
+

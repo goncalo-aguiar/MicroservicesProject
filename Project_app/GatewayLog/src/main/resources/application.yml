@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: gateway
+  server:
+    port: 8082
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+
+#eureka:
+#  client:
+#    registration:
+#      enabled: true
+#    defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"

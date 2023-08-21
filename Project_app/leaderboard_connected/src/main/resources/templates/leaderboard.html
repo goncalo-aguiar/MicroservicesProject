@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Tic Tac Toe Leaderboard</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Games Won</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${ticTacToeLeaderboard}">
+                    <td th:text="${user['username']}"></td>
+                    <td th:text="${user['score']}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h1>Pong Leaderboard</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Best Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${pongLeaderboard}">
+                    <td th:text="${user['username']}"></td>
+                    <td th:text="${user['score']}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

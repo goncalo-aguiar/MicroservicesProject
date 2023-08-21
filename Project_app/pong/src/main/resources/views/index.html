@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong Game JavaScript</title>
+    <style>
+        body{
+            background-color: dimgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #auth-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #leaderboard-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: lightgray;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        #leaderboard-btn:hover {
+            background-color: gray;
+        }
+    </style>
+    <link rel="shortcut icon" href="">
+</head>
+<body>
+<div id="auth-container">
+    <div id="login-form">
+        <h2>Login</h2>
+        <form action = "/login" method="post">
+            <label for="username_login">Username:</label>
+            <input type="text" id="username_login" name="username" required>
+            <br>
+            <label for="password_login">Password:</label>
+            <input type="password" id="password_login" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="register-form">
+        <h2>Register</h2>
+        <form action="/add" method="post">
+            <label for="username_register">Username:</label>
+            <input type="text" id="username_register" name="username" required>
+            <br>
+            <label for="password_register">Password:</label>
+            <input type="password" id="password_register" name="password" required>
+            <br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+<a href="/leaderboard" id="leaderboard-btn">Leaderboard</a>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

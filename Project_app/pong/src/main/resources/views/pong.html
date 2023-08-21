@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pong Game JavaScript</title>
+  <style>
+    body{
+      background-color: dimgray;
+      margin: 0;
+      padding: 0;
+    }
+    #pong{
+      border: 2px solid #FFF;
+      position: absolute;
+      margin :auto;
+      top:0;
+      right:0;
+      left:0;
+      bottom:0;
+    }
+    #startGameBtn {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -150%);
+      padding: 10px;
+      font-size: 18px;
+    }
+    #leaderboard-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: lightgray;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<a href="/leaderboard" id="leaderboard-btn">Leaderboard</a>
+<button id="startGameBtn">Start Game</button>
+<canvas id="pong" width="600" height="400"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="pong.js"></script>
+</body>
+</html>
